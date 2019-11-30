@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 from sklearn.linear_model import LogisticRegression
-from BColors import BColors
 
 FILE_PATH = "data/spam.csv"
 THRESHOLD = 0.5
@@ -124,7 +123,7 @@ def cross_validation(df, l_r, l_reg, folds=10, verbose=True, sklearn=True):
 
     for i in range(folds):
         if verbose:
-            print(BColors.OK_BLUE + "Fold number " + str(i+1) + BColors.END_C)
+            print("Fold number " + str(i+1)
         tr_data, test_data = get_block_data(df.copy(), i, folds)
         w = train(
             tr_data,
